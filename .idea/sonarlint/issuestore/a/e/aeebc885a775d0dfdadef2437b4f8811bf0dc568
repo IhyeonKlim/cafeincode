@@ -1,0 +1,8 @@
+
+q
+java:S1192J"\Define a constant instead of duplicating this literal "redirect:/rentBoard/detail/" 3 times.(ñÑìx
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ë˜È…
+Q
+java:S18544"6Remove this useless assignment to local variable "id".(Î•ò„ýÿÿÿÿ
+B
+java:S14814"'Remove this unused "id" local variable.(Î•ò„ýÿÿÿÿ

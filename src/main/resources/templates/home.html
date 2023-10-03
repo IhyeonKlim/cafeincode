@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!--Common Head-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+    <title>layout</title>
+    <head th:replace="/fragments/apps/htmlConfig :: ConfigFragment">
+</head>
+<body>
+
+<!-- header fragment 사용 -->
+
+<div id="fh5co-container">
+    <th:block th:replace="/fragments/apps/header :: headerFragment"></th:block>
+    <!-- nav fragment 사용 -->
+    <th:block th:replace="/fragments/apps/nav :: navFragment"></th:block>
+    <!-- side fragment 사용 -->
+    <th:block th:replace="/fragments/apps/sideBar :: sideFragment"></th:block>
+    <!-- contents fragment 사용 -->
+    <th:block th:replace="/fragments/apps/contents :: contentsFragment"></th:block>
+    <!-- features fragment 사용 -->
+    <th:block th:replace="/fragments/apps/features :: featuresFragment"></th:block>
+    <!-- menu fragment 사용 -->
+    <th:block th:replace="/fragments/apps/menu :: menuFragment"></th:block>
+    <!-- overlay fragment 사용 -->
+    <th:block th:replace="/fragments/apps/overlay :: overlayFragment"></th:block>
+    <!-- event fragment 사용 -->
+    <th:block th:replace="/fragments/apps/event :: eventFragment"></th:block>
+    <!-- event fragment 사용 -->
+    <th:block th:replace="/fragments/apps/contact :: contactFragment"></th:block>
+</div>
+    <!-- footer fragment 사용 -->
+    <th:block th:replace="/fragments/apps/footer :: footerFragment"></th:block>
+
+</body>
+
+<!-- jQuery -->
+<script src="/assets/apps/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="/assets/apps/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/assets/apps/js/bootstrap.min.js"></script>
+<!-- Bootstrap DateTimePicker -->
+<script src="/assets/apps/js/moment.js"></script>
+<script src="/assets/apps/js/bootstrap-datetimepicker.min.js"></script>
+<!-- Waypoints -->
+<script src="/assets/apps/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="/assets/apps/js/jquery.stellar.min.js"></script>
+
+<!-- Flexslider -->
+<script src="/assets/apps/js/jquery.flexslider-min.js"></script>
+<script>
+            $(function () {
+               $('#date').datetimepicker();
+           });
+</script>
+<!-- Main JS -->
+<script src="/assets/apps/js/main.js"></script>
+</html>

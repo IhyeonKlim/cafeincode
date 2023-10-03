@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!--Common Head-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+    <title>layout</title>
+    <head th:replace="fragments/adminPage/htmlConfig :: ConfigFragment">
+    </head>
+<body id="page-top">
+
+<!-- header fragment 사용 -->
+<th:block th:replace="fragments/adminPage/header :: headerFragment"></th:block>
+
+<div id="wrapper">
+    <!-- side fragment 사용 -->
+    <th:block th:replace="fragments/adminPage/sideBar :: sideFragment"></th:block>
+    <div id="contents">
+        <!-- nav fragment 사용 -->
+        <th:block th:replace="fragments/adminPage/nav :: navFragment"></th:block>
+
+        <!-- contents fragment 사용 -->
+        <th:block th:replace="fragments/adminPage/contents :: contentsFragment"></th:block>
+        <!-- footer fragment 사용 -->
+        <th:block th:replace="fragments/adminPage/footer :: footerFragment"></th:block>
+    </div>
+
+
+</div>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.cafeincode.repository.admin.menu.mapper.MenuMapper">
+
+    <select id="findAll" resultType="Menu">
+        WITH RECURSIVE MENULIST AS (
+        SELECT
+            TML.MENU_ID
+            ,TML.HIERARCHY_MENU_ID
+            ,TML.UPPER_MENU_ID
+            ,TML.MENU_KEY
+            ,TML.MENU_NM
+            ,TML.MENU_URL
+            ,TML.MENU_TYPE
+            ,TML.ACTIVE_YN
+            , 1 as level
+            FROM T_MENU_LIST TML
+            WHERE HIERARCHY_MENU_ID ='ROOT'
+        UNION ALL
+        SELECT
+            TML2.MENU_ID
+            ,TML2.HIERARCHY_MENU_ID
+            ,TML2.UPPER_MENU_ID
+            ,TML2.MENU_KEY
+            ,TML2.MENU_NM
+            ,TML2.MENU_URL
+            ,TML2.MENU_TYPE
+            ,TML2.ACTIVE_YN
+            ,1 + LEVEL AS LEVEL
+            FROM T_MENU_LIST TML2
+            INNER JOIN MENULIST on tml2.upper_menu_id  = MENULIST.menu_id
+        )
+        select
+            concat(lpad('     ', 4*(level-1),'   '), menu_id ) as item_id,
+            rank() over(partition by hierarchy_menu_id order by menu_id desc),
+            dense_rank () over (partition by menu_id order by menu_id desc) as dense_rank,
+            row_number() over (partition by menu_id order by menu_id desc) as ROW_NUM,
+            level
+            from MENULIST
+            order by level;
+    </select>
+
+</mapper>
