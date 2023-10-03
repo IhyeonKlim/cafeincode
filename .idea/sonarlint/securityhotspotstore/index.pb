@@ -124,10 +124,6 @@ f
 6src/main/java/pojo/practice/rentBoard/RentBoardVO.java,1\f\1f2ab1b46dec826723cfb80b01fc61fec0cb37dd
 „
 Tsrc/main/java/kr/cafeincode/repository/admin/menu/repository/MenuRepositoryImpl.java,e\9\e9867ecffca51bd5c81e921b8760e6e5f99ba43c
-[
-+cicmain/.idea/sonarlint/issuestore/index.pb,3\e\3e06ac13def81d466b79d761ad8d1570d84d2455
-e
-5cicmain/.idea/sonarlint/securityhotspotstore/index.pb,7\1\71d6c58e6047fb9474f7f567e04e7b067a211318
 e
 5src/main/java/kr/cafeincode/config/MyBatisConfig.java,6\c\6c4c8042c565fa512d4a05243bf99308597ff148
 h
