@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="/assets/apps/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>회원 목록</h2>
+    </div>
+
+    <form th:object="${itemSearch}" method="get" class="form-inline">
+    <div class="row">
+        <div class="col">
+            <input type="text" th:field="*{userName}" class="form-control" placeholder="회원명"/>
+        </div>
+        <div class="col">
+            <input type="text" th:field="*{userId}" class="form-control" placeholder="회원ID"/>
+        </div>
+<!--        <div class="col">-->
+<!--            <input type="text" th:field="*{roleCd}" class="form-control" placeholder="권한"/>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <input type="text" th:field="*{nickName}" class="form-control" placeholder="닉네임"/>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <input type="text" th:field="*{teamCd}" class="form-control" placeholder="팀코드"/>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <input type="text" th:field="*{email}" class="form-control" placeholder="이메일"/>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <input type="text" th:field="*{loginLockYn}" class="form-control" placeholder="잠금여부"/>-->
+<!--        </div>-->
+        <div class="col">
+            <input type="text" th:field="*{delYn}" class="form-control" placeholder="삭제여부"/>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-secondary mb-2">검색</button>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+            <div class="col">
+                <button class="btn btn-primary float-end"
+                        onclick="location.href='memberAdd.html'"
+                        th:onclick="|location.href='@{/admin/mambers/add}'|"
+                        type="button">회원 가입
+                </button>
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>이름</th>
+                <th>lastlogin</th>
+                <th>delyn</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}">
+                <td><a href="memberDetail.html" th:href="@{/admin/members/{userId}(userId=${member.userId})}" th:text="${member.userId}">회원id</a>
+                </td>
+                <td><a href="memberDetail.html" th:href="@{|/admin/members/${member.userId}|}" th:text="${member.userNm}">상품명</a></td>
+                <td th:text="${member.userId}">10000</td>
+                <td th:text="${member.userNm}">10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div> <!-- /container -->
+
+</body>
+</html>

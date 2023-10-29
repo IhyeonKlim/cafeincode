@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!--Common Head-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+    <title>Cafe in Code -CIC Admin Page</title>
+    <head th:replace="/fragments/admin/htmlConfig :: ConfigFragment">
+    </head>
+<body id="page-top">
+
+<!-- header fragment 사용 -->
+<th:block th:replace="/fragments/admin/header :: headerFragment"></th:block>
+
+<div id="wrapper">
+    <!-- side fragment 사용 -->
+    <th:block th:replace="/fragments/admin/sideBar :: sideFragment"></th:block>
+    <div id="contents">
+        <!-- nav fragment 사용 -->
+        <th:block th:replace="/fragments/admin/nav :: navFragment"></th:block>
+
+        <!-- contents fragment 사용 -->
+        <th:block th:replace="/appContents/member/memberList :: contentsFragment"></th:block>
+        <!-- footer fragment 사용 -->
+        <th:block th:replace="/fragments/admin/footer :: footerFragment"></th:block>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
